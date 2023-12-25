@@ -15,4 +15,13 @@ function getHero() {
 }
 
 myHero = getHero();
+
+const getName = () => {
+  return "Ankush";
+};
+
+let printName;
+
+printName = getName();
+
 export {};
