@@ -31,3 +31,42 @@ async function getFavoriteNumber(): Promise<number> {
   return 26;
 }
 ```
+
+# Tuples
+
+- It is kind of Specialised Array given by TS
+- Most Important : **In a Very Precise Order**
+
+Eg: Number 1
+
+```typescript
+let user: [string] = ["Ankush"];
+
+// There will Only 1 element type of string
+```
+
+Eg: Number 2
+
+```typescript
+let user: [string, string, number] = ["Ankush", "Thakur", 123]; /* Tuples*/
+let rgb: [number, number, number] = [123, 222, 333];
+```
+
+### MAIN ISSUE WITH THE TUPLES
+
+```typescript
+type User = [string, number];
+
+const variable: User = ["Javascript", 123];
+
+variable[0] = "Typescript"; /* I can change the value */
+
+// It says 1st element will be a String, and it could be anything
+
+/* THE CONSERING PART */
+variable.pop();
+
+variable.push(true);
+
+//  here i can do Mutiple Opertions
+```
