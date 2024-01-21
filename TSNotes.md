@@ -104,3 +104,40 @@ myUser.email = "a@ank.com"; /* easily update this */
 
 
 ```
+
+# Abstract Class
+
+- You cannot create **Object** from the Abstract Class
+- 1st You need to extends and then you can create
+- It is just a blue Print
+
+```typescript
+class Company {
+  constructor(public companyName: string, public companyType: string) {}
+}
+
+const Ankush = new Company("IndianBlaster", "IT Company");
+// We can easliy extends the class here
+
+//  NOW WHEN WE USE abstract keyword
+
+abstract class Company {
+  constructor(public companyName: string, public companyType: string) {}
+}
+
+const Ankush = new Company("IndianBlaster", "IT Company");
+//  We get an error
+```
+
+> cannot create an instance of an abstract
+
+```typescript
+// TO solve this, We first need to extends, then we can create an object
+abstract class Company {
+  constructor(public companyName: string, public companyType: string) {}
+}
+
+class ParentCompany extends Company {}
+
+const Ankush = new ParentCompany("IndianBlaster", "IT Company");
+```
