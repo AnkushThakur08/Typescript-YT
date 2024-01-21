@@ -110,6 +110,7 @@ myUser.email = "a@ank.com"; /* easily update this */
 - You cannot create **Object** from the Abstract Class
 - 1st You need to extends and then you can create
 - It is just a blue Print
+- you can give a byDefault Feature in the Abstract Class
 
 ```typescript
 class Company {
@@ -140,4 +141,56 @@ abstract class Company {
 class ParentCompany extends Company {}
 
 const Ankush = new ParentCompany("IndianBlaster", "IT Company");
+```
+
+# Generics
+
+```typescript
+function indentityOne(value: number | boolean): number | boolean {
+  return value;
+}
+/* The value could be number or Boolean, and return type is also the same */
+/* What if the value is String- not work  */
+
+function indentityTwo(value: any): any {
+  return value;
+}
+/* Any is not a good Approach */
+
+function indentityThree<Type>(value: Type): Type {
+  return value;
+}
+/* It is like ANY, but better than any, because we don't know the type
+but once we get the type we are sure that, return type will also be the same
+*/
+
+indentityThree("Ankush");
+indentityThree(true);
+indentityThree(10);
+
+// Here Ankus is Act as type
+```
+
+> function indentityThree<"Ankush">(value: "Ankush"): "Ankush"
+> function indentityThree<true>(value: true): true
+> function indentityThree<10>(value: 10): 10
+
+```typescript
+// production use Case
+
+interface Employee {
+  firstName: string;
+  lastName: string;
+  email: string;
+  empID: number;
+}
+
+function createEmployee<Employee>() {}
+
+// Another way to use Generics
+function identityFive<T>(val: T): T {
+  return T;
+
+  // This <T> is Generics
+}
 ```
